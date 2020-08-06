@@ -1,0 +1,6 @@
+D:\.NET\Letuanhai.NET.HAUI\DAO\bin\Debug\DAO.dll
+D:\.NET\Letuanhai.NET.HAUI\DAO\bin\Debug\DAO.pdb
+D:\.NET\Letuanhai.NET.HAUI\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\.NET\Letuanhai.NET.HAUI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\.NET\Letuanhai.NET.HAUI\DAO\obj\Debug\DAO.dll
+D:\.NET\Letuanhai.NET.HAUI\DAO\obj\Debug\DAO.pdb
