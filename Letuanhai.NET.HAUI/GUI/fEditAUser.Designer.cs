@@ -269,7 +269,7 @@
             this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 17;
             // 
-            // EditAUser
+            // fEditAUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Name = "EditAUser";
+            this.Name = "fEditAUser";
             this.Text = "EditAUser";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

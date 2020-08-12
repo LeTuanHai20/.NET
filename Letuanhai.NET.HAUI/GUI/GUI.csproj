@@ -52,12 +52,6 @@
     <Compile Include="fAddAUser.Designer.cs">
       <DependentUpon>fAddAUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="fAdministrator.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fAdministrator.Designer.cs">
-      <DependentUpon>fAdministrator.cs</DependentUpon>
-    </Compile>
     <Compile Include="fEditAUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAddAUser.resx">
+      <DependentUpon>fAddAUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEditAUser.resx">
+      <DependentUpon>fEditAUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,9 +95,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{D9A7CA36-60AC-4380-89F1-954C9CC15501}</Project>
-      <Name>DAO</Name>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{76bee8e8-8e85-4fe7-8136-222fe784a335}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{985e0b8e-45cd-4188-85d7-8c9a7c2af86a}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

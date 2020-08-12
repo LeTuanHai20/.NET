@@ -10,3 +10,9 @@ D:\.NET\Letuanhai.NET.HAUI\GUI\bin\Debug\DAO.pdb
 D:\.NET\Letuanhai.NET.HAUI\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\.NET\Letuanhai.NET.HAUI\GUI\obj\Debug\GUI.exe
 D:\.NET\Letuanhai.NET.HAUI\GUI\obj\Debug\GUI.pdb
+D:\.NET\Letuanhai.NET.HAUI\GUI\obj\Debug\GUI.fAddAUser.resources
+D:\.NET\Letuanhai.NET.HAUI\GUI\bin\Debug\BUS.dll
+D:\.NET\Letuanhai.NET.HAUI\GUI\bin\Debug\DTO.dll
+D:\.NET\Letuanhai.NET.HAUI\GUI\bin\Debug\BUS.pdb
+D:\.NET\Letuanhai.NET.HAUI\GUI\bin\Debug\DTO.pdb
+D:\.NET\Letuanhai.NET.HAUI\GUI\obj\Debug\GUI.fEditAUser.resources

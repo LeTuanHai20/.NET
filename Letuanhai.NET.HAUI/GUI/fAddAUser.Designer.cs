@@ -37,17 +37,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.LastName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.cbxRole = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.RePassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtRePassword = new System.Windows.Forms.TextBox();
             this.Save = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.txtError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(394, 88);
+            this.label2.Location = new System.Drawing.Point(458, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 31);
             this.label2.TabIndex = 1;
@@ -143,41 +144,41 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Role:";
             // 
-            // Email
+            // txtEmail
             // 
-            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Email.Location = new System.Drawing.Point(295, 148);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(247, 29);
-            this.Email.TabIndex = 6;
-            this.Email.Text = "the.email@address.com";
-            this.Email.Enter += new System.EventHandler(this.Email_Enter);
-            this.Email.Leave += new System.EventHandler(this.Email_Leave);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtEmail.Location = new System.Drawing.Point(295, 148);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(247, 29);
+            this.txtEmail.TabIndex = 6;
+            this.txtEmail.Text = "the.email@address.com";
+            this.txtEmail.Enter += new System.EventHandler(this.Email_Enter);
+            this.txtEmail.Leave += new System.EventHandler(this.Email_Leave);
             // 
-            // FirstName
+            // txtFirstName
             // 
-            this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.FirstName.Location = new System.Drawing.Point(295, 200);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(199, 29);
-            this.FirstName.TabIndex = 7;
-            this.FirstName.Text = "First name";
-            this.FirstName.Enter += new System.EventHandler(this.FirstName_Enter);
-            this.FirstName.Leave += new System.EventHandler(this.FirstName_Leave);
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtFirstName.Location = new System.Drawing.Point(295, 200);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(199, 29);
+            this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.Text = "First name";
+            this.txtFirstName.Enter += new System.EventHandler(this.FirstName_Enter);
+            this.txtFirstName.Leave += new System.EventHandler(this.FirstName_Leave);
             // 
-            // LastName
+            // txtLastName
             // 
-            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.LastName.Location = new System.Drawing.Point(295, 248);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(199, 29);
-            this.LastName.TabIndex = 8;
-            this.LastName.Text = "Last Name";
-            this.LastName.Enter += new System.EventHandler(this.LastName_Enter);
-            this.LastName.Leave += new System.EventHandler(this.LastName_Leave);
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtLastName.Location = new System.Drawing.Point(295, 248);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(199, 29);
+            this.txtLastName.TabIndex = 8;
+            this.txtLastName.Text = "Last Name";
+            this.txtLastName.Enter += new System.EventHandler(this.LastName_Enter);
+            this.txtLastName.Leave += new System.EventHandler(this.LastName_Leave);
             // 
             // cbxRole
             // 
@@ -220,41 +221,44 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Password Again:";
             // 
-            // Password
+            // txtPassword
             // 
-            this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Password.Location = new System.Drawing.Point(780, 209);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(197, 29);
-            this.Password.TabIndex = 13;
-            this.Password.Text = "Password";
-            this.Password.Enter += new System.EventHandler(this.Password_Enter);
-            this.Password.Leave += new System.EventHandler(this.Password_Leave);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtPassword.Location = new System.Drawing.Point(780, 209);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(197, 29);
+            this.txtPassword.TabIndex = 13;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.Enter += new System.EventHandler(this.Password_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.Password_Leave);
             // 
-            // RePassword
+            // txtRePassword
             // 
-            this.RePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RePassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.RePassword.Location = new System.Drawing.Point(780, 263);
-            this.RePassword.Name = "RePassword";
-            this.RePassword.Size = new System.Drawing.Size(197, 29);
-            this.RePassword.TabIndex = 14;
-            this.RePassword.Text = "Re-enter password";
-            this.RePassword.Enter += new System.EventHandler(this.RePassword_Enter);
-            this.RePassword.Leave += new System.EventHandler(this.RePassword_Leave);
+            this.txtRePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRePassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtRePassword.Location = new System.Drawing.Point(780, 263);
+            this.txtRePassword.Name = "txtRePassword";
+            this.txtRePassword.Size = new System.Drawing.Size(197, 29);
+            this.txtRePassword.TabIndex = 14;
+            this.txtRePassword.Text = "Re-enter password";
+            this.txtRePassword.Enter += new System.EventHandler(this.RePassword_Enter);
+            this.txtRePassword.Leave += new System.EventHandler(this.RePassword_Leave);
             // 
             // Save
             // 
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save.Location = new System.Drawing.Point(332, 381);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(147, 52);
             this.Save.TabIndex = 15;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // Cancel
             // 
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.Location = new System.Drawing.Point(563, 381);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(147, 52);
@@ -262,29 +266,40 @@
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
-            // AddUser
+            // txtError
+            // 
+            this.txtError.AutoSize = true;
+            this.txtError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtError.ForeColor = System.Drawing.Color.Red;
+            this.txtError.Location = new System.Drawing.Point(620, 327);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(0, 20);
+            this.txtError.TabIndex = 17;
+            // 
+            // fAddAUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 534);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Save);
-            this.Controls.Add(this.RePassword);
-            this.Controls.Add(this.Password);
+            this.Controls.Add(this.txtRePassword);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbxRole);
-            this.Controls.Add(this.LastName);
-            this.Controls.Add(this.FirstName);
-            this.Controls.Add(this.Email);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Name = "AddUser";
+            this.Name = "fAddAUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser";
             this.panel1.ResumeLayout(false);
@@ -305,16 +320,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.TextBox FirstName;
-        private System.Windows.Forms.TextBox LastName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.ComboBox cbxRole;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Password;
-        private System.Windows.Forms.TextBox RePassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Label txtError;
     }
 }

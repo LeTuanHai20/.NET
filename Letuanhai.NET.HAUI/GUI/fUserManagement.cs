@@ -1,4 +1,4 @@
-﻿using DAO;
+﻿using BUS;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,8 +9,10 @@ namespace GUI
 {
     public partial class fUserManagement : Form
     {
-        DataProvider provider = new DataProvider();
+        
         DataTable dataCurrent;
+        UserManagementBus bus = new UserManagementBus();
+        Load load = new Load();
         public fUserManagement()
         {
             InitializeComponent();
@@ -24,8 +26,10 @@ namespace GUI
         {
             List<string> ListToSort = new List<string>()
             {
+                "Email",
                 "Last Name",
-                "First Name"
+                "First Name",
+                "Role Name"
             };
             SortBy.DataSource = ListToSort;
         }
@@ -60,9 +64,7 @@ namespace GUI
         #endregion
         void LoadUserList()
         {
-            string query = @"select Users.FirstName, Users.LastName, Users.Email, Role.RoleName
-            from Users inner join Role on Users.RoleId = Role.RoleId";
-            var data = provider.ExecuteQuery(query);
+            var data = bus.GetData();
             dataCurrent = data;
             DataView dv = new DataView(data);
             dv.Sort = "LastName";
@@ -85,7 +87,16 @@ namespace GUI
             editAUser.txtEmail.Text = ListUser.Rows[e.RowIndex].Cells["Email"].Value.ToString();
             editAUser.txtFirstName.Text = ListUser.Rows[e.RowIndex].Cells["FirstName"].Value.ToString();
             editAUser.txtLastName.Text = ListUser.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
-            editAUser.cbxRole.SelectedItem = ListUser.Rows[e.RowIndex].Cells["RoleName"].Value.ToString();
+            string roleName = ListUser.Rows[e.RowIndex].Cells["RoleName"].Value.ToString();
+            if (roleName == "Admin")
+            {
+                editAUser.cbxRole.SelectedValue = 1;
+            }
+            else if (roleName == "User")
+            {
+                editAUser.cbxRole.SelectedValue = 2;
+            }
+            
             this.Hide();
             editAUser.ShowDialog();
         }
@@ -105,6 +116,16 @@ namespace GUI
                         SortUsers("LastName");
                         break;
                     }
+                case "Email":
+                    {
+                        SortUsers("Email");
+                        break;
+                    }
+                case "Role Name":
+                    {
+                        SortUsers("RoleName");
+                        break;
+                    }
                 default:
                     break;
             }
@@ -121,20 +142,13 @@ namespace GUI
         #region Filter
         private void FilterUser(string value)
         {
-            string query = null;
-            if (value == "All Roles")
-            {
-                query = string.Format(@"select Users.FirstName, Users.LastName, Users.Email, Role.RoleName
-                from Users inner join Role on Users.RoleId = Role.RoleId");
-            }
-            else
-            {
-                query = string.Format(@"select Users.FirstName, Users.LastName, Users.Email, Role.RoleName
-            from Users inner join Role on Users.RoleId = Role.RoleId where RoleName = '{0}'", value);
-            }
-            var data = provider.ExecuteQuery(query);
+            var data = bus.Filter(value);
             this.dataCurrent = data;
             ListUser.DataSource = data;
+            if(data.Rows.Count == 0)
+            {
+                DialogResult result = MessageBox.Show("Vai trò này không tìm thấy", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            }
         }
         private void filterByRole_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -164,11 +178,13 @@ namespace GUI
         #region Search
         private void SearchByLastName(string value)
         {
-            string query = string.Format(@"select Users.FirstName, Users.LastName, Users.Email, Role.RoleName
-            from Users inner join Role on Users.RoleId = Role.RoleId where  LastName like '%{0}%'", value);
             filterByRole.SelectedItem = "All Roles";
             SortBy.SelectedItem = "Last Name";
-            ListUser.DataSource = provider.ExecuteQuery(query);
+            ListUser.DataSource = bus.SearchByLastName(value);
+            if(bus.SearchByLastName(value).Rows.Count == 0)
+            {
+                DialogResult result = MessageBox.Show("Nội dung này không tìm thấy", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            }
         }
         private void SearchLastName(object sender, EventArgs e)
         {
@@ -191,7 +207,13 @@ namespace GUI
 
         private void Logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát chương trình", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
 
