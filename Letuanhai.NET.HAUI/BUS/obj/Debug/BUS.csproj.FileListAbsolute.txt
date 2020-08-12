@@ -1,0 +1,11 @@
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\BUS.dll
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\BUS.pdb
+D:\.NET\Letuanhai.NET.HAUI\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\.NET\Letuanhai.NET.HAUI\BUS\obj\Debug\BUS.dll
+D:\.NET\Letuanhai.NET.HAUI\BUS\obj\Debug\BUS.pdb
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\DAO.dll
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\DAO.pdb
+D:\.NET\Letuanhai.NET.HAUI\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+D:\.NET\Letuanhai.NET.HAUI\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\DTO.dll
+D:\.NET\Letuanhai.NET.HAUI\BUS\bin\Debug\DTO.pdb
